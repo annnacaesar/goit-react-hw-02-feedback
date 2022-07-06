@@ -1,3 +1,5 @@
+import SectionStatistics from './SectionStatistics/SectionStatistics'
+
 export const App = () => {
   return (
     <div
@@ -10,6 +12,9 @@ export const App = () => {
         color: '#010101'
       }}
     >
+
+      <SectionStatistics title="Залиште будь-ласка свій відгук" good={0} neutral={0} bad={0} total={0} positivePercentage={0}/>
+    
     </div>
   );
 };
