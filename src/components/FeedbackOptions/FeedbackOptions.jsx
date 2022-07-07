@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, FeedbackContainer } from './FeedbackOptions.styled';
 // import {PropTypes} from 'prop-types'
 
-export class FeedbackOptions extends Component {
+ class FeedbackOptions extends Component {
 	static propTypes = {};
 
 	render() {
@@ -21,5 +21,7 @@ export class FeedbackOptions extends Component {
 			</FeedbackContainer>
 		);
 	}
-}
+ }
+
+export default FeedbackOptions;
 

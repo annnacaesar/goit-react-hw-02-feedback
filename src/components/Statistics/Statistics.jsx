@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, TitleStatistic, List, Item } from './Statistics.styled';
 // import {PropTypes} from 'prop-types'
 
-export class Statistics extends Component {
+class Statistics extends Component {
 
 	render() {
 		const { good, neutral, bad, total, positivePercentage } = this.props;
@@ -26,3 +26,5 @@ export class Statistics extends Component {
 		);
 	}
 }
+
+export default Statistics;

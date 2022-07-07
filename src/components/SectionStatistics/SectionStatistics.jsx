@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {FeedbackOptions} from 'components/FeedbackOptions/FeedbackOptions';
+import FeedbackOptions from 'components/FeedbackOptions';
 import { Title, Section } from './SectionStatistics.styled';
-import { Statistics } from '../Statistics/Statistics';
-import { Notification } from '../Notification/Notification';
+import Statistics from '../Statistics';
+import Notification from '../Notification';
 // import {PropTypes} from 'prop-types'
 
-export class SectionStatistics extends Component {
+ class SectionStatistics extends Component {
 	static propTypes = {};
 
 	state = {
@@ -83,3 +83,5 @@ export class SectionStatistics extends Component {
 		);
 	}
 }
+
+export default SectionStatistics;
