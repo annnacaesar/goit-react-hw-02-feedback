@@ -1,7 +1,11 @@
-import { Notice} from './Notification.styled'
+import { Component } from 'react';
+import { Notice } from './Notification.styled';
+// import {PropTypes} from 'prop-types'
 
-export const Notification = () => {
-	return (
-		<Notice>Відгуків поки немає 🙄 </Notice>
-	)
+export class Notification extends Component {
+	static propTypes = {};
+
+	render() {
+		return <Notice>Відгуків поки немає 🙄 </Notice>;
+	}
 }

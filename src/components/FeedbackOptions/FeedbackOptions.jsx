@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, FeedbackContainer } from './FeedbackOptions.styled';
+// import {PropTypes} from 'prop-types'
 
-const FeedbackOptions = ({inkrementGood, inkrementNeutral, inkrementBad}) => (
-<FeedbackContainer>
-					
-					<Button type="button" onClick={inkrementGood}>
-						Добрий
-					</Button>
-					<Button
-						type="button"
-						onClick={inkrementNeutral}
-					>
-						Помірний
-					</Button>
-					<Button
-						type="button"
-						onClick={inkrementBad}
-					>
-						Поганий
-					</Button>
-				</FeedbackContainer>
-)
+export class FeedbackOptions extends Component {
+	static propTypes = {};
 
-export default FeedbackOptions;
+	render() {
+		const { inkrementGood, inkrementNeutral, inkrementBad } = this.props;
+		return (
+			<FeedbackContainer>
+				<Button type="button" onClick={inkrementGood}>
+					Добрий
+				</Button>
+				<Button type="button" onClick={inkrementNeutral}>
+					Помірний
+				</Button>
+				<Button type="button" onClick={inkrementBad}>
+					Поганий
+				</Button>
+			</FeedbackContainer>
+		);
+	}
+}
+
