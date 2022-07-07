@@ -45,7 +45,8 @@ export class SectionStatistics extends Component {
 	};
 
 	totalFeedback = () => {
-		return this.state.good + this.state.neutral + this.state.bad;
+		const { good, neutral, bad } = this.state;
+		return good + neutral + bad;
 	};
 
 	percentageGoodFeedback = () => {
@@ -53,9 +54,11 @@ export class SectionStatistics extends Component {
 	};
 
 	render() {
+		const { good, neutral, bad } = this.state;
+		const { title } = this.props;
 		return (
 			<Section>
-				<Title>{this.props.title}</Title>
+				<Title>{title}</Title>
 
 				<FeedbackOptions
 					inkrementGood={this.hundleInkrementGood}
@@ -63,13 +66,13 @@ export class SectionStatistics extends Component {
 					inkrementBad={this.hundleInkrementBad}
 				/>
 
-				{this.state.good !== 0 ||
-				this.state.neutral !== 0 ||
-				this.state.bad !== 0 ? (
+				{good !== 0 ||
+				neutral !== 0 ||
+				bad !== 0 ? (
 					<Statistics
-						good={this.state.good}
-						neutral={this.state.neutral}
-						bad={this.state.bad}
+						good={good}
+						neutral={neutral}
+						bad={bad}
 						total={this.totalFeedback()}
 						positivePercentage={this.percentageGoodFeedback()}
 					/>
