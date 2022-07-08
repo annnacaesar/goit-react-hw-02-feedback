@@ -1,27 +1,25 @@
-import React, { Component } from 'react';
 import { Button, FeedbackContainer } from './FeedbackOptions.styled';
-// import {PropTypes} from 'prop-types'
+import {PropTypes} from 'prop-types'
 
- class FeedbackOptions extends Component {
-	static propTypes = {};
+const FeedbackOptions = ({ options, onLeaveFeedback }) =>  (
+		<FeedbackContainer>
+			{options.map(option =>  (
+					<Button
+						key={option}
+						type="button"
+						name={option}
+						onClick={onLeaveFeedback}
+					>
+						{option}
+					</Button>
+				)
+			)}
+		</FeedbackContainer>
+	);
 
-	render() {
-		const { inkrementGood, inkrementNeutral, inkrementBad } = this.props;
-		return (
-			<FeedbackContainer>
-				<Button type="button" onClick={inkrementGood}>
-					Добрий
-				</Button>
-				<Button type="button" onClick={inkrementNeutral}>
-					Помірний
-				</Button>
-				<Button type="button" onClick={inkrementBad}>
-					Поганий
-				</Button>
-			</FeedbackContainer>
-		);
-	}
- }
+FeedbackOptions.propTypes = {
+	options: PropTypes.array,
+	onLeaveFeedback: PropTypes.func,
+}
 
 export default FeedbackOptions;
-

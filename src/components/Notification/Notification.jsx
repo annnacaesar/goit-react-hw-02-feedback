@@ -1,13 +1,10 @@
-import { Component } from 'react';
 import { Notice } from './Notification.styled';
-// import {PropTypes} from 'prop-types'
+import {PropTypes} from 'prop-types'
 
-class Notification extends Component {
-	static propTypes = {};
+const Notification = ({ notice }) => (<Notice>{notice}</Notice>);
 
-	render() {
-		return <Notice>Відгуків поки немає 🙄 </Notice>;
-	}
+Notification.propTypes = {
+	notice: PropTypes.string,
 }
 
 export default Notification;
